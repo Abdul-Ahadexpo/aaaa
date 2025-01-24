@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text and Symbols Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    textarea {
+      width: 80%;
+      height: 100px;
+      margin: 10px 0;
+      font-size: 18px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 20px;
+      color: #444;
+      background-color: #e9ecef;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Text and Symbols Converter</h1>
+  <textarea id="inputText" placeholder="Enter text or symbols here..."></textarea>
+  <br>
+  <button onclick="convertToSymbols()">To Symbols</button>
+  <button onclick="convertToText()">To Text</button>
+  <div class="output" id="outputText"></div>
+
+  <script>
+    const cipher = {
+      A: "∫", B: "∪", C: "⊂", D: "⊃", E: "∤", F: "∥",
+      G: "7", H: "Π", I: "Γ", J: "∂", K: "∪", L: "∠",
+      M: "⊡", N: "□", O: "⨞", P: "⌒", Q: "∩", R: "ς",
+      S: ">", T: "∨", U: "<", V: "Λ", W: "≅", X: "⋇",
+      Y: "⟃", Z: "⟐"
+    };
+
+    // Reverse the cipher to create a "symbols-to-text" map
+    const reverseCipher = {};
+    for (const [key, value] of Object.entries(cipher)) {
+      reverseCipher[value] = key;
+    }
+
+    function convertToSymbols() {
+      const inputText = document.getElementById("inputText").value.toUpperCase();
+      let outputText = "";
+      for (const char of inputText) {
+        if (char === " ") {
+          outputText += " "; // Preserve spaces
+        } else if (cipher[char]) {
+          outputText += cipher[char] + " ";
+        } else {
+          outputText += char + " "; // Keep characters that are not in the cipher
+        }
+      }
+      document.getElementById("outputText").innerText = outputText.trim();
+    }
+
+    function convertToText() {
+      const inputText = document.getElementById("inputText").value.split(/(\s+)/); // Split and keep spaces
+      let outputText = "";
+      for (const symbol of inputText) {
+        if (symbol.trim() === "") {
+          outputText += " "; // Preserve spaces
+        } else if (reverseCipher[symbol]) {
+          outputText += reverseCipher[symbol];
+        } else {
+          outputText += symbol; // Keep characters that are not in the reverse cipher
+        }
+      }
+      document.getElementById("outputText").innerText = outputText.trim();
+    }
+  </script>
+</body>
+
+</html>
