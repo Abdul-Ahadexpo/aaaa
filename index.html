@@ -82,7 +82,7 @@
       let outputText = "";
       for (const char of inputText) {
         if (char === " ") {
-          outputText += " "; // Preserve spaces
+          outputText += "_ "; // Replace spaces with an underscore
         } else if (cipher[char]) {
           outputText += cipher[char] + " ";
         } else {
@@ -93,11 +93,11 @@
     }
 
     function convertToText() {
-      const inputText = document.getElementById("inputText").value.split(/(\s+)/); // Split and keep spaces
+      const inputText = document.getElementById("inputText").value.split(" "); // Split by spaces
       let outputText = "";
       for (const symbol of inputText) {
-        if (symbol.trim() === "") {
-          outputText += " "; // Preserve spaces
+        if (symbol === "_") {
+          outputText += " "; // Replace underscores with spaces
         } else if (reverseCipher[symbol]) {
           outputText += reverseCipher[symbol];
         } else {
