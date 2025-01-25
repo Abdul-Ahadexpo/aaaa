@@ -139,20 +139,11 @@ button:hover {
     width: 95%;
     padding: 1rem;
   }
-
-  button {
-    padding: 0.8rem 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
   h1 {
     font-size: 2rem;
-  }
-
-  button {
-    width: 100%;
-    margin-bottom: 0.5rem;
   }
 
   .space-x-4 {
