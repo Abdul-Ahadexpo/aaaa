@@ -1,0 +1,162 @@
+/* General body styling */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #ede7f6);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 2rem 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Title styling */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #d946ef);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+/* Input area styling */
+#inputText {
+  max-width: 90%;
+  width: 800px;
+  border: 2px solid #c4b5fd;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#inputText:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 6px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Button styling */
+button {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #6366f1, #d946ef);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #d946ef, #6366f1);
+}
+
+.btn-secondary {
+  border: 2px solid #6366f1;
+  color: #6366f1;
+}
+
+.btn-secondary:hover {
+  border-color: #d946ef;
+  color: #d946ef;
+}
+
+/* Output area styling */
+#outputText {
+  max-width: 90%;
+  width: 800px;
+  min-height: 100px;
+  background: #f3f4f6;
+  border: 2px solid #c4b5fd;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-wrap: break-word;
+  animation: slideIn 1s ease-out;
+}
+
+/* Copy button styling */
+#copyBtn {
+  background: linear-gradient(45deg, #4f46e5, #d946ef);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#copyBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(111, 56, 236, 0.3);
+}
+
+#copyBtn i {
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #inputText,
+  #outputText {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .space-x-4 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
