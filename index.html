@@ -18,9 +18,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  
 
-    <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -113,12 +113,27 @@
     // Copy functionality
     document.getElementById("copyBtn").addEventListener("click", function () {
       const outputText = document.getElementById("outputText").innerText;
-      navigator.clipboard.writeText(outputText).then(function () {
-        alert("Text copied to clipboard!");
-      }).catch(function (err) {
-        alert("Failed to copy text: " + err);
-      });
+      navigator.clipboard.writeText(outputText)
+        .then(function () {
+          Swal.fire({
+            title: "Success!",
+            text: "Text copied to clipboard!",
+            icon: "success",
+            confirmButtonText: "OK",
+            timer: 2000,
+            timerProgressBar: true,
+          });
+        })
+        .catch(function (err) {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to copy text: " + err,
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+        });
     });
+
 
     // Make the convert buttons functional
     document.querySelector(".btn-primary").addEventListener("click", convertToSymbols);
