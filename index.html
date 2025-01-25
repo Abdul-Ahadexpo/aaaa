@@ -12,7 +12,6 @@
   <script src="https://kit.fontawesome.com/5fc4420cfa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <style>
   .txtarea {
     max-width: 1000px;
@@ -27,7 +26,6 @@
 
   /* Styling the Copy Button */
   #copyBtn {
-
     background: linear-gradient(45deg, #3b82f6, #9333ea);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -41,7 +39,6 @@
     font-size: 1.2rem;
   }
 </style>
-
 
 <body class="bg-gradient-to-b from-gray-100 to-gray-300 font-sans text-center py-10">
   <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-6">
@@ -74,10 +71,6 @@
     <i class="fa-regular fa-copy text-black"></i>
   </button>
 </body>
-
-
-
-
 
 <script>
   // Wait until the DOM is fully loaded
@@ -145,8 +138,10 @@
     // Make the convert buttons functional
     document.querySelector(".btn-primary").addEventListener("click", convertToSymbols);
     document.querySelector(".btn-secondary").addEventListener("click", convertToText);
+
+    // Auto-conversion on typing
+    document.getElementById("inputText").addEventListener("input", convertToSymbols);
   });
 </script>
-
 
 </html>
