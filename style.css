@@ -11,8 +11,6 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #4f46e5, #d946ef);
-  -webkit-background-clip: text;
   color: transparent;
   margin-bottom: 1.5rem;
   animation: bounce 2s infinite;
@@ -27,6 +25,7 @@ h1 {
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
+  animation: zoomIn 1s ease;
 }
 
 #inputText:focus {
@@ -47,20 +46,22 @@ button:hover {
   background: linear-gradient(45deg, #6366f1, #d946ef);
   color: #fff;
   border: none;
+  animation: pulse 2s infinite;
 }
 
 .btn-primary:hover {
   background: linear-gradient(45deg, #d946ef, #6366f1);
 }
 
-.btn-secondary {
+.btn-info {
   border: 2px solid #6366f1;
   color: #6366f1;
+  animation: glow 3s infinite alternate;
 }
 
-.btn-secondary:hover {
-  border-color: #d946ef;
-  color: #d946ef;
+.btn-info:hover {
+  border-color: #46bfef;
+  color: #000000;
 }
 
 /* Output area styling */
@@ -75,15 +76,16 @@ button:hover {
   margin-top: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-wrap: break-word;
-  animation: slideIn 1s ease-out;
+  animation: slideIn 1s ease-out, fadeGlow 4s infinite alternate;
 }
 
 /* Copy button styling */
 #copyBtn {
-  background: linear-gradient(45deg, #4f46e5, #d946ef);
+  background: linear-gradient(45deg, #4f46e5, #2dda89);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: heartbeat 3s infinite;
 }
 
 #copyBtn:hover {
@@ -125,6 +127,57 @@ button:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #6366f1;
+  }
+  100% {
+    box-shadow: 0 0 20px #46c8ef;
+  }
+}
+
+@keyframes fadeGlow {
+  0% {
+    background-color: #f3f4f6;
+  }
+  100% {
+    background-color: #e0e7ff;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
 }
 
