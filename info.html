@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use Doro Chat</title>
+  <script src="https://kit.fontawesome.com/5fc4420cfa.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="bg-gradient-to-br from-blue-50 to-pink-50 min-h-screen flex flex-col items-center p-6 text-gray-700 font-sans">
+
+  <!-- Navigation Bar -->
+  <div class="navbar bg-white rounded-lg shadow-md p-4 mb-6 w-full max-w-xl flex items-center justify-between">
+    <h2 class="text-2xl font-semibold text-emerald-500 flex items-center">
+      <a href="./index.html" class="mr-2">
+        <i class="fa-solid fa-circle-arrow-left text-xl hover:text-emerald-700 transition-colors"></i>
+      </a>
+      How to Use This App
+    </h2>
+  </div>
+
+  <!-- Instructions Container -->
+  <div class="w-full max-w-xl space-y-8 bg-white rounded-xl shadow-xl p-6">
+    <!-- Instruction 1 -->
+    <div
+      class="instruction-card cursor-pointer hover:scale-105 transition-transform duration-300 active:scale-95 unselectable">
+      <h3 class="text-xl font-semibold text-purple-500 mb-2">1. "To Nigga TXT" Button:</h3>
+      <p class="leading-relaxed text-gray-600">
+        Press this button to convert your regular text into a cool, secret code.
+        <span class="font-semibold text-purple-500">For example:</span>
+        <code class="bg-gray-300 px-2 py-1 rounded text-gray-800">HELLO</code> becomes
+        <code class="bg-gray-300 px-2 py-1 rounded text-gray-800">Π∠ΓΓ∤</code>.
+        It's perfect for sharing messages only your friends can understand!
+      </p>
+    </div>
+
+    <!-- Instruction 2 -->
+    <div
+      class="instruction-card cursor-pointer hover:scale-105 transition-transform duration-300 active:scale-95 unselectable">
+      <h3 class="text-xl font-semibold text-purple-500 mb-2">2. "To Text" Button:</h3>
+      <p class="leading-relaxed text-gray-600">
+        Use this button to decode the symbols back into readable text.
+        <span class="font-semibold text-purple-500">For instance:</span>
+        <code class="bg-gray-300 px-2 py-1 rounded text-gray-800">Π∠ΓΓ∤</code>
+        will transform back into <code class="bg-gray-300 px-2 py-1 rounded text-gray-800">HELLO</code>.
+        It's like solving a fun puzzle with just a click!
+      </p>
+    </div>
+  </div>
+
+  <!-- Explanation Section -->
+  <div
+    class="w-full max-w-xl bg-white rounded-xl shadow-xl p-6 mt-8 instruction-card unselectable text-center space-y-4">
+    <h3 class="text-xl font-semibold text-purple-500">Alphabet Mapping:</h3>
+    <p class="leading-relaxed text-gray-600">
+      Each letter in the alphabet is replaced as follows:
+    </p>
+    <pre class="bg-gray-200 px-4 py-2 rounded text-left text-base text-gray-900 overflow-auto font-semibold">
+      A: "∫", B: "υ", C: "⊂", D: "⊃", E: "∤", F: "∥",
+
+      G: "7", H: "Π", I: "Γ", J: "∂", K: "∪", L: "∠",
+
+      M: "⊡", N: "□", O: "⨞", P: "⌒", Q: "∩", R: "ς",
+
+      S: ">", T: "∨", U: "<", V: "Λ", W: "≅", X: "⋇",
+      
+      Y: "⟃", Z: "⟐"
+    </pre>
+    <p class="leading-relaxed text-gray-600">
+      <strong>Spaces:</strong> Replaced with <code class="bg-gray-300 px-1 rounded">--</code>. <br>
+      <strong>Others:</strong> Remain unchanged.
+    </p>
+  </div>
+
+  <!-- Styles -->
+  <style>
+    .instruction-card {
+      border: 2px solid rgb(162, 255, 22);
+      border-radius: 16px;
+      padding: 16px;
+      background: linear-gradient(to bottom right, #ffffff, #f0faff);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .instruction-card:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .instruction-card:active {
+      transform: scale(0.95);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to bottom right, #f0faff, #e0f7ff);
+    }
+
+    /* Text unselectable */
+    .unselectable {
+      user-select: none;
+    }
+
+    /* Animations */
+    .instruction-card:hover::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+      animation: hoverGlow 1s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes hoverGlow {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Fade In and Bounce */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceMobile {
+      0% {
+        transform: translateY(20px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile-specific animation */
+    @media (max-width: 768px) {
+      .instruction-card {
+        padding: 12px;
+        animation: fadeIn 0.8s ease-in-out, bounceMobile 0.8s ease-in-out;
+      }
+    }
+  </style>
+
+</body>
+
+
+
+
+
+</html>
