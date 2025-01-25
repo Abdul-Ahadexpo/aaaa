@@ -32,10 +32,18 @@
     </a>
   </h1>
 
-  <!-- Input area -->
-  <textarea id="inputText"
-    class="textarea textarea-bordered txtarea h-24 text-lg p-4 border-gray-300 rounded-lg mb-4 shadow-md"
-    placeholder="Enter text or Nigga TXT here..."></textarea>
+  <!-- Input area with clear button -->
+  <div class="relative w-3/4 mx-auto max-w-[1000px]">
+    <textarea id="inputText"
+      class="textarea textarea-bordered txtarea h-24 w-full text-lg p-4 border-gray-300 rounded-lg mb-4 shadow-md"
+      placeholder="Enter text or Nigga TXT here..."></textarea>
+    <!-- Clear button -->
+    <button onclick="clearTextarea()"
+      class="absolute bottom-2 right-2 bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-semibold shadow hover:bg-red-600 transition-all">
+      Clear
+    </button>
+  </div>
+
   <br>
 
   <!-- Action buttons -->
@@ -144,6 +152,12 @@
     // Auto-conversion on typing
     document.getElementById("inputText").addEventListener("input", convertToSymbols);
   });
+
+
+  function clearTextarea() {
+    document.getElementById('inputText').value = '';
+  }
+
 </script>
 
 </html>
