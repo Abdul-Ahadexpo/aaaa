@@ -53,13 +53,13 @@ button:hover {
   background: linear-gradient(45deg, #d946ef, #6366f1);
 }
 
-.btn-info {
+.btn-secondary {
   border: 2px solid #6366f1;
   color: #6366f1;
   animation: glow 3s infinite alternate;
 }
 
-.btn-info:hover {
+.btn-secondary:hover {
   border-color: #46bfef;
   color: #000000;
 }
