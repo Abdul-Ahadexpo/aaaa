@@ -65,12 +65,36 @@
   <button id="copyBtn" class="text-white p-2 rounded-full z-10 hidden">
     <i class="fa-regular fa-copy text-purple-200"></i>
   </button>
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer footer-center bg-gray-800 text-gray-300 p-4 mt-10 hidden">
+    <aside>
+      <p class="text-sm">
+        Copyright © 2007-<span id="currentYear"></span> - All rights reserved by <span
+          class="font-bold text-gray-100">Doro.inc</span>
+      </p>
+    </aside>
+  </footer>
+  <script>
+    // Dynamically set the current year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+
+
+
+
+
 </body>
-
-
-
-
-
 
 <script src="script.js"></script>
 
